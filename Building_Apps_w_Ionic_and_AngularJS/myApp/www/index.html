@@ -31,24 +31,25 @@
         <ion-tab title="Calendar" icon="ion-calendar"></ion-tab>
       </ion-tabs>
       <ion-content>
-          <div class="list list-inset">
-            <div class="item item-divider">
-                Header
-            </div>
-            <div class="item item-image item-body">
-              <img src="http://placehold.it/600x200" alt="Item image">
-              <p>
-                Nulla fringilla finibus nibh, a maximus lorem. Donec iaculis, nunc sit amet blandit vestibulum, leo tellus eleifend tellus, at varius lectus neque at massa. Etiam in aliquam orci.
-              </p> 
-            </div>
-            <div class="item item-icon-left item-text-wrap">
-                <i class="icon ion-home"></i>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nibh in convallis pharetra. In commodo a tortor eu faucibus. 
-            </div>
-            <div class="item item-divider">
-                Footer
-            </div>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="Your first name">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Last Name</span>
+            <input type="text" placeholder="Your last name">
+          </label>
+
+          <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <input type="text" placeholder="Address">
+            </label>  
+            <button class="button button-small">search</button>  
           </div>
+
+        </div>
       </ion-content>
     </ion-pane>
   </body>
