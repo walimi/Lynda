@@ -36,5 +36,10 @@ angular.module('starter', ['ionic'])
           $scope.artists.splice(fromIndex, 1);
           $scope.artists.splice(toIndex, 0, item);
         }; 
+
+        $scope.toggleStar = function(item) {
+          item.star = !item.star;
+        };
+
       });
 }]);
