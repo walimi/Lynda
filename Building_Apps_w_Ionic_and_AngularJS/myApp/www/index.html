@@ -1,101 +1,45 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above <link href="css/ionic.app.css"
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above <link href="css/ionic.app.css"
     rel="stylesheet">
     -->
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  
-  <body ng-app="starter">
-    <ion-pane>
-      <ion-header-bar class="bar-positive">
-        <button class="icon ion-navicon button button-clear"></button>
-        <h1 class="title">Ionic Blank Starter</h1>
-        <button class="icon ion-gear-a button button-clear"></button>
-      </ion-header-bar>
-      <ion-tabs class="tabs-icon-top">
-        <ion-tab badge="1" badge-style="badge-assertive" title="Home" icon="ion-home"></ion-tab>
-        <ion-tab title="About" icon="ion-person"></ion-tab>
-        <ion-tab title="Calendar" icon="ion-calendar"></ion-tab>
-      </ion-tabs>
-      <ion-content>
-        <div class="list list-inset">
-          <label class="item item-input">
-            <span class="input-label">First Name</span>
-            <input type="text" placeholder="Your first name">
-          </label>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+</head>
 
-          <label class="item item-input item-stacked-label">
-            <span class="input-label">Last Name</span>
-            <input type="text" placeholder="Your last name">
-          </label>
-
-          <label class="item item-input item-stacked-label">
-            <textarea placeholder="comments"></textarea>
-          </label>
-
-          <div class="item item-divider">I want to be a ...</div>
-
-          <div class="item item-checkbox">
-            <label class="checkbox">
-              <input type="checkbox">
-            </label> 
-            <span class="input-label">Astronaut</span>
-          </div>
-          
-          <div class="item item-checkbox checkbox-royal">
-            <label class="checkbox">
-              <input type="checkbox">
-            </label> 
-            <span class="input-label">Celebrity Chef</span>
-          </div>
-
-          <div class="item item-checkbox checkbox-energized">
-            <label class="checkbox">
-              <input type="checkbox">
-            </label> 
-            <span class="input-label">Stay home dad</span>
-          </div>
-
-          <div class="item item-toggle">
-            <span class="input-label">Awesomeness</span>
-            <label class="toggle">
-              <input type="checkbox">
-              <div class="track"><div class="handle"></div></div>
-            </label>
-          </div>
-
-          <div class="item range">
-            <span class="input-label">Feeling</span>
-            <i class="icon ion-sad-outline"></i>
-            <input type="range" name="feeling" min="0" max="100" value="50">
-            <i class="icon ion-happy"></i>
-          </div>
-
-          <label class="item item-input item-select">
-            <div class="input-label">Favorite Pet</div>
-            <select>
-              <option>Dogs</option>  
-              <option>Cats</option>  
-              <option>Rabbits</option>  
-            </select>
-          </label>
-
-        </div>
-      </ion-content>
-    </ion-pane>
-  </body>
+<body ng-app="starter">
+  <ion-pane>
+    <ion-header-bar class="bar-dark">
+      <h2 class="title">Artist List</h2>
+    </ion-header-bar>
+    <div class="bar bar-subheader item-input-inset bar-ligth">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search">
+      </label>
+    </div>
+    <ion-content ng-controller="ListController" class="has-subheader">
+      <ion-list>
+       <ion-item ng-repeat='item in artists' class="item-thumbnail-left item-text-wrap">
+        <img  src="img/{{item.shortname}}_tn.jpg" alt="{{item.name}} Photo">
+        <h2>{{item.name}}</h2>
+        <h3>{{item.reknown}}</h3>
+        <p>{{item.bio}}</p>
+      </ion-item> 
+      </ion-list>
+    </ion-content>
+  </ion-pane>
+</body>
 
 </html>
