@@ -41,5 +41,12 @@ angular.module('starter', ['ionic'])
           item.star = !item.star;
         };
 
+        $scope.doRefresh = function() {
+          $http.get('js/data.json').success(function(data){
+            $scope.artists = data;
+            $scope.$broadcast('scroll.refreshComplete');
+          });
+        };
+
       });
 }]);
