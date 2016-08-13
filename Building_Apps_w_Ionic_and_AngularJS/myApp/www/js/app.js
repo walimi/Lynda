@@ -65,6 +65,10 @@ angular.module('starter', ['ionic'])
       .success(function(data) {
         $scope.artists = data;
         $scope.whichartist = $state.params.aId;
+        $scope.data = { 
+          showDelete: false, 
+          showReorder: false 
+        };
         $scope.onItemDelete = function(item) {
           $scope.artists.splice($scope.artists.indexOf(item), 1);
         };
